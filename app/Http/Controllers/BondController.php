@@ -150,7 +150,7 @@ class BondController extends Controller
                     }
                     $result['maturity'] = $maturity;
 
-                    // Размер купона (в рублях) – берём из COUPONVALUE
+                    // Размер купона (в рублях) 
                     $coupon = $getSecValue('COUPONVALUE');
                     if ($coupon !== null && is_numeric($coupon)) {
                         $result['coupon_value'] = (float)$coupon;

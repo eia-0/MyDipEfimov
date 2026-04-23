@@ -76,7 +76,7 @@
                     @endphp
                     <tr class="{{ $date >= $today ? 'future-row' : 'past-row' }}">
                         <td>{{ $date->format('d.m.Y') }}</td>
-                        <td>{{ $value ? number_format($value, 2) . ' ₽' : '—' }}</td>
+                        <td>{{ is_numeric($bond['coupon_value']) ? number_format((float)$bond['coupon_value'], 2) . ' ₽' : '—' }}</td>
                         <td>{{ $date >= $today ? $diff . ' дн.' : 'прошло ' . $diff . ' дн.' }}</td>
                     </tr>
                 @empty
