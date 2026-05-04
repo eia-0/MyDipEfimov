@@ -6,9 +6,6 @@
 <div class="max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
         <h1 class="text-2xl font-bold">Портфель</h1>
-        <a href="{{ route('market') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center md:text-left">
-            + Добавить облигацию
-        </a>
     </div>
 
     @if($portfolios->isEmpty())
@@ -18,24 +15,30 @@
         </div>
     @else
         <!-- Общая стоимость и общая прибыль -->
-        <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow p-6 mb-6">
-    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-        <div>
-            <div class="text-lg opacity-90">Общая стоимость портфеля</div>
-            <div class="text-4xl font-bold" id="total-value">0 ₽</div>
-            <div class="text-sm opacity-80 mt-1" id="total-profit-info"></div>
+        <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow p-6 mb-6 max-[400px]:p-4">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                <div>
+                    <div class="text-lg opacity-90">Общая стоимость портфеля</div>
+                    <div class="text-4xl font-bold max-[400px]:text-2xl" id="total-value">0 ₽</div>
+                    <div class="text-sm opacity-80 mt-1" id="total-profit-info"></div>
+                </div>
+                <div class="flex flex-wrap gap-2 justify-center md:justify-end max-[400px]:flex-nowrap max-[400px]:gap-1">
+                    <a href="{{ route('market') }}" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 flex items-center gap-1 transition max-[400px]:px-2 max-[400px]:py-1 max-[400px]:text-sm">
+                        ➕ <span class="max-[400px]:hidden">Добавить</span>
+                    </a>
+                    <a href="{{ route('analytics') }}" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 flex items-center gap-1 transition max-[400px]:px-2 max-[400px]:py-1 max-[400px]:text-sm">
+                        📈 <span class="max-[400px]:hidden">Аналитика</span>
+                    </a>
+                    <a href="{{ route('favorites.index') }}" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 flex items-center gap-1 transition max-[400px]:px-2 max-[400px]:py-1 max-[400px]:text-sm">
+                        ⭐ <span class="max-[400px]:hidden">Избранное</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-wrap gap-3 justify-center md:justify-end">
-            <a href="{{ route('market') }}" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">➕ Добавить</a>
-            <a href="{{ route('analytics') }}" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">📈 Аналитика</a>
-            <a href="{{ route('favorites.index') }}" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">⭐ Избранное</a>
-        </div>
-    </div>
-</div>
 
-        <!-- Таблица портфеля -->
+        <!-- Таблица портфеля (адаптивная, с горизонтальной прокруткой) -->
         <div class="bg-white rounded-lg shadow overflow-x-auto">
-            <table class="w-full text-sm md:text-base">
+            <table class="w-full text-sm md:text-base min-w-[600px]">
                 <thead class="bg-gray-50 border-b">
                     <tr>
                         <th class="text-left py-3 px-2 md:px-4">Название</th>

@@ -6,6 +6,27 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>MoyCupon - @yield('title', 'Инвест портфель')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('iconka/apple-icon-57x57.png') }}">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('iconka/apple-icon-60x60.png') }}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('iconka/apple-icon-72x72.png') }}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('iconka/apple-icon-76x76.png') }}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('iconka/apple-icon-114x114.png') }}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('iconka/apple-icon-120x120.png') }}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('iconka/apple-icon-144x144.png') }}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('iconka/apple-icon-152x152.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('iconka/apple-icon-180x180.png') }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('iconka/android-icon-192x192.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('iconka/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('iconka/favicon-96x96.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('iconka/favicon-16x16.png') }}">
+<link rel="manifest" href="{{ asset('iconka/manifest.json') }}">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="{{ asset('iconka/ms-icon-144x144.png') }}">
+<meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Montserrat', sans-serif; background: #f5f7fb; }
@@ -47,7 +68,7 @@
             <form method="POST" action="{{ route('logout') }}" class="mt-auto">
                 @csrf
                 <button type="submit" class="w-full text-left py-2 px-4 text-red-400 hover:bg-red-900/20 rounded transition">
-                    🚪 Выйти
+                    Выйти
                 </button>
             </form>
         </div>
@@ -80,7 +101,7 @@
             <form method="POST" action="{{ route('logout') }}" class="mt-auto">
                 @csrf
                 <button type="submit" class="w-full text-left py-2 px-4 text-red-400 hover:bg-red-900/20 rounded transition">
-                    🚪 Выйти
+                    Выйти
                 </button>
             </form>
         </div>
